@@ -5,10 +5,13 @@ export default function Navbar() {
     return <>
         <div>
             Navbar
-            <br></br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <a href="/">Home</a>
-            <br></br>
-            <a href="/shop">Shop</a>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            {/* <a href="/shop">Shop</a> */}
+            <a href="/brand-login">Brand Login</a>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="/influencer-login">Influencer Login</a>
         </div>
     </>
 }
