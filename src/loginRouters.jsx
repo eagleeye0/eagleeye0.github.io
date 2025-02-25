@@ -1,10 +1,8 @@
-import React from "react";
 import { useSelector } from "react-redux";
-import { Navigate, Outlet, Route, useLocation } from "react-router-dom";
+import { Navigate, Outlet } from "react-router-dom";
 
-export function RequireAuth({ children, redirectTo }) {
+export default function RequireAuth({ redirectTo = "/brand-login" }) {
+  const user = useSelector((state) => state.auth.user); // Fix: Use state.auth.user
 
-    let isAuthenticated = useSelector(state => state.auth.isAuthenticated);
-
-    return isAuthenticated ? children : <Navigate to={redirectTo} />;
+  return user ? <Outlet /> : <Navigate to={redirectTo} replace />;
 }
