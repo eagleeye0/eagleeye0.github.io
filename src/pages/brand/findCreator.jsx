@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useSelector } from "react-redux";
-import Navbar from "../../components/navbar";
+import Navbar from "../../components/molecules/navbar";
 
 export default function FindCreator() {
   const { loading, error, user } = useSelector((state) => state.auth);

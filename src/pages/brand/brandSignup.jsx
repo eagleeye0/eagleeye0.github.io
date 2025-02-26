@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { registerUser } from "../../redux/slices/brandAuthSlice";
-import Navbar from "../../components/navbar";
+import Navbar from "../../components/molecules/navbar";
 
 export default function SignUp() {
   const [name, setName] = useState("");

@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { loginUser } from "../../redux/slices/brandAuthSlice";
-import Navbar from "../../components/navbar";
+import Navbar from "../../components/molecules/navbar";
 
 export default function Brand() {
   const { loading, error, user } = useSelector((state) => state.auth);
