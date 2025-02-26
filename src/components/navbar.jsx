@@ -1,10 +1,10 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { logoutUser } from "../redux/slices/authSlice";
+import { logoutUser } from "../redux/slices/brandAuthSlice";
 
 export default function Navbar() {
     const dispatch = useDispatch();
-    
+
     const logout = (e) => {
         e.preventDefault();
         dispatch(logoutUser({ }));

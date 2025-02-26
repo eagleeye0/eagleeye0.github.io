@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { registerUser } from "../../redux/slices/authSlice";
+import { registerUser } from "../../redux/slices/brandAuthSlice";
 import Navbar from "../../components/navbar";
 
 export default function SignUp() {

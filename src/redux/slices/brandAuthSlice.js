@@ -7,7 +7,9 @@ export const registerUser = createAsyncThunk(
   "auth/registerUser",
   async ({ name, email, password }, thunkAPI) => {
     try {
-      const response = await axios.post("/api/v1/auth/register", { name, email, password });
+      const response = await axios.post("/api/v1/auth/register", {
+        name, email, password, role: "brand",
+      });
 
       if (response.status === 201 && response.data?.user_data) {
         const user = response.data.user_data;
@@ -30,18 +32,19 @@ export const loginUser = createAsyncThunk(
   async ({ email, password }, thunkAPI) => {
     try {
 
-            const body = {
-                email: email,
-                password: password
-            }
-            const response = await axios.post("api/v1/auth/login", body);
+      const body = {
+        email: email,
+        password: password,
+        role: "brand",
+      }
+      const response = await axios.post("api/v1/auth/login", body);
 
       if (response.status === 200 && response.data?.user_data) {
         const user = response.data.user_data;
         localStorage.setItem("user", JSON.stringify(user)); // Store user in localStorage
         return { id: user.id, email: user.email, name: user.name };
       } else {
-                return thunkAPI.rejectWithValue("Invalid email or password");
+        return thunkAPI.rejectWithValue("Invalid email or password");
       }
     } catch (error) {
       return thunkAPI.rejectWithValue(
@@ -53,7 +56,7 @@ export const loginUser = createAsyncThunk(
 
 // 🔹 Logout User
 export const logoutUser = createAsyncThunk("auth/logoutUser", async () => {
-    // TODO: add logout API call to backend
+  // TODO: add logout API call to backend
   localStorage.removeItem("user");
   return null;
 });
