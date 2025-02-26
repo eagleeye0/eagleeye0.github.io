@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { registerUser } from "../../redux/slices/brandAuthSlice";
 import Navbar from "../../components/molecules/navbar";
+import Loading from "../../components/atoms/loading";
 
 export default function SignUp() {
   const [name, setName] = useState("");
@@ -27,38 +28,41 @@ export default function SignUp() {
   return (
     <div>
       <Navbar />
-      <h1>Brand Sign Up</h1>
-      {user ? (
-        <p>Welcome, {user.name}!</p>
-      ) : (
-        <form onSubmit={handleSignUp}>
-          <input
-            type="text"
-            placeholder="Full Name"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-            required
-          />
-          <input
-            type="email"
-            placeholder="Email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-          />
-          <input
-            type="password"
-            placeholder="Password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            required
-          />
-          <button type="submit" disabled={loading}>
-            {loading ? "Signing Up..." : "Sign Up"}
-          </button>
-        </form>
+      {loading ? <Loading /> : (<>
+        <h1>Brand Sign Up</h1>
+        {user ? (
+          <p>Welcome, {user.name}!</p>
+        ) : (
+          <form onSubmit={handleSignUp}>
+            <input
+              type="text"
+              placeholder="Full Name"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              required
+            />
+            <input
+              type="email"
+              placeholder="Email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+            />
+            <input
+              type="password"
+              placeholder="Password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
+            />
+            <button type="submit" disabled={loading}>
+              {loading ? "Signing Up..." : "Sign Up"}
+            </button>
+          </form>
+        )}
+        {error && <p style={{ color: "red" }}>{error}</p>}
+        </>
       )}
-      {error && <p style={{ color: "red" }}>{error}</p>}
     </div>
   );
 }

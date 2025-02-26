@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { loginUser } from "../../redux/slices/brandAuthSlice";
 import Navbar from "../../components/molecules/navbar";
+import Loading from "../../components/atoms/loading";
 
 export default function Login() {
   const [email, setEmail] = useState("");
@@ -26,29 +27,32 @@ export default function Login() {
   return (
     <div>
       <Navbar />
-     <h1>Brand Login/SignUp</h1>
-      {user ? <p>Welcome, {user.name}!</p> : (
-        <form onSubmit={handleLogin}>
-          <input
-            type="email"
-            placeholder="Email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-          />
-          <input
-            type="password"
-            placeholder="Password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            required
-          />
-          <button type="submit" disabled={loading}>
-            {loading ? "Logging in..." : "Login"}
-          </button>
-        </form>
+      {loading ? <Loading /> : (<>
+        <h1>Brand Login/SignUp</h1>
+        {user ? <p>Welcome, {user.name}!</p> : (
+          <form onSubmit={handleLogin}>
+            <input
+              type="email"
+              placeholder="Email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+            />
+            <input
+              type="password"
+              placeholder="Password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
+            />
+            <button type="submit" disabled={loading}>
+              {loading ? "Logging in..." : "Login"}
+            </button>
+          </form>
+        )}
+        {error && <p style={{ color: "red" }}>{error}</p>}
+      </>
       )}
-      {error && <p style={{ color: "red" }}>{error}</p>}
     </div>
   );
 }
