@@ -3,14 +3,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simple Web Page</title>
+    <title>Mobizo - Truck Booking App</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-    <h1>Welcome to My Web Page</h1>
-    <p>Click the button to change the background color!</p>
-    <button onclick="changeColor()">Change Color</button>
+    <!-- Navigation Bar -->
+    <header>
+        <div class="logo">Mobizo</div>
+        <nav>
+            <ul>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#how-it-works">How It Works</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <a href="#" class="cta-btn">Download App</a>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Seamless Truck Booking at Your Fingertips</h1>
+            <p>Fast, reliable, and transparent truck booking for businesses and individuals.</p>
+            <a href="#" class="cta-btn">Get Started</a>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <h2>Key Features</h2>
+        <div class="feature-container">
+            <div class="feature">
+                <h3>Real-time Tracking</h3>
+                <p>Track your truck's location live and stay updated.</p>
+            </div>
+            <div class="feature">
+                <h3>Transparent Pricing</h3>
+                <p>Get upfront pricing with no hidden charges.</p>
+            </div>
+            <div class="feature">
+                <h3>Bidding System</h3>
+                <p>Choose the best price from multiple driver bids.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section id="how-it-works" class="how-it-works">
+        <h2>How It Works</h2>
+        <div class="steps">
+            <div class="step">📍 Enter Pickup & Drop-off</div>
+            <div class="step">🚚 Choose Truck Type</div>
+            <div class="step">💰 Get Fare & Confirm</div>
+            <div class="step">📍 Track & Receive Goods</div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="testimonials" class="testimonials">
+        <h2>What Our Users Say</h2>
+        <p>⭐⭐⭐⭐⭐ "The best truck booking experience ever!" - Sarah J.</p>
+        <p>⭐⭐⭐⭐⭐ "Real-time tracking made logistics simple!" - Mike T.</p>
+    </section>
+
+    <!-- Contact & Footer -->
+    <footer id="contact">
+        <h2>Get in Touch</h2>
+        <p>Email: support@mobizo.com | Phone: +123-456-7890</p>
+        <a href="#" class="cta-btn">Download App</a>
+    </footer>
 
     <script src="script.js"></script>
 </body>
