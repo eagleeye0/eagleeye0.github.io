@@ -1,24 +1,107 @@
+/* General Styles */
 body {
     font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
     text-align: center;
-    margin: 50px;
-    background-color: #f4f4f4;
 }
 
-h1 {
-    color: #333;
-}
-
-button {
-    background-color: #008CBA;
+/* Navigation */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #333;
     color: white;
-    border: none;
+    padding: 15px 50px;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+.cta-btn {
+    background: #ff6600;
+    color: white;
     padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
+    text-decoration: none;
     border-radius: 5px;
 }
 
-button:hover {
-    background-color: #005f73;
+/* Hero Section */
+.hero {
+    background: url('images/truck-bg.jpg') no-repeat center center/cover;
+    color: white;
+    padding: 100px 20px;
+}
+
+.hero-content h1 {
+    font-size: 36px;
+}
+
+.hero-content p {
+    font-size: 18px;
+}
+
+/* Features */
+.features {
+    padding: 50px 20px;
+    background: #f4f4f4;
+}
+
+.feature-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.feature {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 250px;
+}
+
+/* How It Works */
+.how-it-works {
+    padding: 50px 20px;
+}
+
+.steps {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    font-size: 18px;
+}
+
+/* Testimonials */
+.testimonials {
+    background: #ff6600;
+    color: white;
+    padding: 50px 20px;
+}
+
+/* Footer */
+footer {
+    background: #222;
+    color: white;
+    padding: 20px;
 }
