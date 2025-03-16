@@ -2,6 +2,7 @@ import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { logoutUser } from "../../redux/slices/brandAuthSlice";
 import { Link, useNavigate } from "react-router-dom";
+import logo from "../../static/img/logo.png"
 import "./navbar.css";
 
 export default function Navbar() {
@@ -18,7 +19,8 @@ export default function Navbar() {
   return (
     <nav className="navbar">
       <div className="nav-links">
-        <Link to="/">Brandfluence</Link>
+        <Link to="/">
+        <img src={logo} height={"23px"}></img></Link>
         <Link to="/brand-login">Brand Login</Link>
         <Link to="/brand-signup">Brand Sign Up</Link>
         <Link to="/brand">Brand Home Page</Link>
