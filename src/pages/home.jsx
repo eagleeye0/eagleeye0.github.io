@@ -5,6 +5,6 @@ import "./home.css";
 export default function Home() {
     return <>
     <Navbar />
-    <h1>Brandfluence Home</h1>
+    <h1>Mobizo Home</h1>
     </>
 }

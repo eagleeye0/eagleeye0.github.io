@@ -1,12 +1,11 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { registerUser } from "../../redux/slices/brandAuthSlice";
+import { loginUser } from "../../redux/slices/brandAuthSlice";
 import Navbar from "../../components/molecules/navbar";
 import Loading from "../../components/atoms/loading";
 
-export default function SignUp() {
-  const [name, setName] = useState("");
+export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const dispatch = useDispatch();
@@ -20,27 +19,18 @@ export default function SignUp() {
     }
   }, [user, navigate]);
 
-  const handleSignUp = (e) => {
+  const handleLogin = (e) => {
     e.preventDefault();
-    dispatch(registerUser({ name, email, password }));
+    dispatch(loginUser({ email, password }));
   };
 
   return (
     <div>
       <Navbar />
       {loading ? <Loading /> : (<>
-        <h1>Brand Sign Up</h1>
-        {user ? (
-          <p>Welcome, {user.name}!</p>
-        ) : (
-          <form onSubmit={handleSignUp}>
-            <input
-              type="text"
-              placeholder="Full Name"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-              required
-            />
+        <h1>Partner Login/SignUp</h1>
+        {user ? <p>Welcome, {user.name}!</p> : (
+          <form onSubmit={handleLogin}>
             <input
               type="email"
               placeholder="Email"
@@ -56,13 +46,14 @@ export default function SignUp() {
               required
             />
             <button type="submit" disabled={loading}>
-              {loading ? "Signing Up..." : "Sign Up"}
+              {loading ? "Logging in..." : "Login"}
             </button>
           </form>
         )}
         {error && <p style={{ color: "red" }}>{error}</p>}
-        </>
+      </>
       )}
     </div>
   );
 }
+

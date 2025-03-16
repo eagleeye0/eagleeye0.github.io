@@ -21,10 +21,7 @@ export default function Navbar() {
       <div className="nav-links">
         <Link to="/">
         <img src={logo} height={"23px"}></img></Link>
-        <Link to="/brand-login">Brand Login</Link>
-        <Link to="/brand-signup">Brand Sign Up</Link>
-        <Link to="/brand">Brand Home Page</Link>
-        <Link to="/influencer-login">Influencer Login</Link>
+        <Link to="/login">Partner Login</Link>
       </div>
       {user && (
         <button className="logout-btn" onClick={handleLogout}>
