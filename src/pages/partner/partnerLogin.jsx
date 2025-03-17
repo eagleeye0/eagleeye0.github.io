@@ -15,7 +15,7 @@ export default function Login() {
   // Redirect if user is already logged in
   useEffect(() => {
     if (user) {
-      navigate("/brand");
+      navigate("/dashboard");
     }
   }, [user, navigate]);
 

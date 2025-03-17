@@ -22,6 +22,7 @@ export default function Navbar() {
         <Link to="/">
         <img src={logo} height={"23px"}></img></Link>
         <Link to="/login">Partner Login</Link>
+        <Link to="/dashboard">Partner Dashboard</Link>
       </div>
       {user && (
         <button className="logout-btn" onClick={handleLogout}>
