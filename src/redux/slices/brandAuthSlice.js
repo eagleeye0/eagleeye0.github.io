@@ -37,7 +37,18 @@ export const loginUser = createAsyncThunk(
         password: password,
         role: "brand",
       }
-      const response = await axios.post("api/v1/auth/login", body);
+      // const response = await axios.post("api/v1/auth/login", body);
+      // TODO: uncomment in production
+      const response = {
+        status: 200,
+        data:{
+          user_data:{
+            id: 1,
+            email: "akshatjain@mobizo.in",
+            name: "Akshat",
+          }
+        }
+      }
 
       if (response.status === 200 && response.data?.user_data) {
         const user = response.data.user_data;
