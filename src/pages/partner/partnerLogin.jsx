@@ -1,8 +1,27 @@
+import axios from "axios";
 import { useState } from "react";
+import { string } from "yup";
 
 export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  async function loginApi() {
+    try{
+      console.log("functioncalled")
+  const result= await axios.post("http://54.86.30.213:8000/api/v1/auth/login",{
+  "phone": "8076177654",
+  "email": "aki.jain51@gmail.com",
+  "role": "owner",
+  "password": "123"})
+  console.log(result)
+    }
+
+    catch (error) {
+      console.log(error)
+     
+    }
+
+  }
 
   return (
     <div className="container">
@@ -59,7 +78,7 @@ export default function Login() {
                 Forgot your password?
               </a>
 
-              <button type="submit" className="signin-btn">
+              <button  className="signin-btn" onClick={loginApi}>
                 Sign in
               </button>
 
