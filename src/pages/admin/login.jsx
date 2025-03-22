@@ -5,19 +5,19 @@ export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   async function loginApi() {
-    try{
+    try {
       console.log("functioncalled")
-  const result= await axios.post("http://54.86.30.213:8000/api/v1/auth/login",{
-  "phone": "8076177654",
-  "email": "aki.jain51@gmail.com",
-  "role": "owner",
-  "password": "123"})
-  console.log(result)
+      const result = await axios.post("/api/v1/auth/login", {
+        "email": email,
+        "role": "admin",
+        "password": password
+      })
+      console.log(result)
     }
 
     catch (error) {
       console.log(error)
-     
+
     }
 
   }
@@ -38,7 +38,7 @@ export default function Login() {
       {/* Split Content */}
       <div className="main-content">
         {/* Left Side - Welcome */}
-        <div className="left-side">
+        {/* <div className="left-side">
           <div className="welcome-section">
             <h1>Welcome Back!</h1>
             <p className="subtitle">
@@ -46,15 +46,15 @@ export default function Login() {
               deliveries seamlessly.
             </p>
           </div>
-        </div>
+        </div> */}
 
         {/* Right Side - Login */}
         <div className="right-side">
           <div className="login-box">
-            <h2 className="login-title">Login</h2>
+            <h2 className="login-title">Admin Login</h2>
             <form className="login-form">
               <div className="form-group">
-                <label>Phone no./Email</label>
+                <label>Email</label>
                 <input
                   type="text"
                   value={email}
@@ -77,7 +77,7 @@ export default function Login() {
                 Forgot your password?
               </a>
 
-              <button  className="signin-btn" onClick={loginApi}>
+              <button className="signin-btn" onClick={loginApi}>
                 Sign in
               </button>
 
