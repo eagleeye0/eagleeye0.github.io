@@ -1,6 +1,6 @@
 import React from "react";
 // import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { HashRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./pages/home";
 import Dashboard from "./pages/partner/dashboard";
 // import Shop from "./pages/shop";
@@ -11,8 +11,8 @@ export default function App() {
 
   return <Router>
     <Routes>
-      <Route path="/" element={<Home />} />``
-      <Route path="/login/" element={<Signup />} />
+      <Route path="/" element={<Home />} />
+      <Route path="/login/" element={<Login />} />
       <Route path="/dashboard" element={<Dashboard />}/>
       <Route path="/signup" element={<Signup />} />
     
